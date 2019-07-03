@@ -1,0 +1,45 @@
+.about-content {
+    font-family: 'Open Sans', Fallback, sans-serif;
+    margin: 15px;
+}
+
+.icon {
+    font-size: 30px;
+    padding-right: 15px; 
+}
+
+.about-icon {
+    padding-top: 10px;
+    font-size: 30px;
+}
+
+.image-type {
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.default-button {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.bottom-content {
+    width: 100%;
+    position:absolute;
+    bottom: 10px;
+}
+
+.about-label {
+    margin-left: 10px;
+}
+
+.about-info-label {
+    margin-top: 15px;
+    float: right;
+}

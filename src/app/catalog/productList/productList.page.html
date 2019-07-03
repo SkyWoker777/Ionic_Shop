@@ -1,0 +1,68 @@
+<ion-header class="default-header">
+    <ion-toolbar class="default-header">
+        <ion-title>
+            Products
+        </ion-title>
+        <ion-buttons slot="start">
+            <ion-icon class="icon" name="arrow-back" (click)="goBack()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div>
+        <ion-list>
+            <div item-content *ngFor="let product of productsArray">
+                <ion-card>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col size="2" class="content-with-right-border">
+                                <ion-img class="image-type" *ngIf="type == 'Magazines'"
+                                    src="../assets/images/magazine.svg">
+                                </ion-img>
+                                <ion-img class="image-type" *ngIf="type == 'Books'"
+                                    src="../assets/images/open-book.svg">
+                                </ion-img>
+                            </ion-col>
+                            <ion-col size="10">
+                                <span class="price-label light-orange-color">${{product.price}}</span>
+                                <ion-card-header>
+                                    <ion-card-subtitle *ngIf="type == 'Books'">{{product.authors}}
+                                    </ion-card-subtitle>
+                                    <ion-card-subtitle *ngIf="type == 'Magazines'">{{product.publisher}}
+                                    </ion-card-subtitle>
+                                    <ion-card-title>{{product?.name}}</ion-card-title>
+                                </ion-card-header>
+
+                                <ion-card-content class="description" *ngIf="type == 'Books'">
+                                    {{product.description}}
+                                </ion-card-content>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <div class="white-content">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="8">
+                                    <ion-chip class="dark-green-background-opacity">
+                                        <ion-label class="dark-green-color">{{product.category.value}}</ion-label>
+                                    </ion-chip>
+                                </ion-col>
+                                <ion-col size="2">
+                                    <button class="small-button dark-green-color">
+                                        <ion-icon class="icon" name="basket" (click)="addToCart(product)"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col size="2">
+                                    <button class="small-button dark-orange-color"
+                                        (click)="goToInfo(product.id)">
+                                        <ion-icon class="icon" name="information-circle-outline"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </div>
+                </ion-card>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "NestMarket",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,24 @@
+<ion-header class="default-header">
+    <ion-toolbar class="default-header">
+        <ion-title>
+            Catalog
+        </ion-title>
+        <ion-buttons slot="start">
+            <ion-icon class="icon" name="arrow-back" (click)="goBack()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ion-list>
+            <div item-content *ngFor="let type of productsTypesArray | keyvalue">
+                <ion-item (click)="goToTypeList(type.key)">
+                    <ion-img class="image-type" src={{type.value}}></ion-img>
+                    <ion-label>{{type.key}}</ion-label>
+                    <ion-icon class="icon gray-color" slot="end" name="arrow-forward"></ion-icon>
+                </ion-item>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

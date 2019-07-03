@@ -1,0 +1,69 @@
+.content-with-right-border {
+    border-right: solid rgb(231, 231, 231);
+    position: relative;
+}
+
+.white-content {
+    height: 60px;
+    background-color: white;
+    position: relative;
+}
+
+.image-type {
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.price-label {
+    font-family: 'Open Sans', Fallback, sans-serif;
+    font-size: 20px;
+    float: right;
+}
+
+.description {
+    font-family: 'Open Sans', Fallback, sans-serif;
+    max-height: 55px;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.icon-cart {
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+.small-button {
+    background: none;
+    outline: none;
+    height: 50px;
+    width: 50px;
+}
+
+.default-orange-button {
+    height: 35px;
+    --color: white; 
+    --background: #E89D80;
+}
+
+.badge{
+    position: absolute;
+    --background: rgba(196, 57, 57, 0.7);
+    height:1.5rem;
+    bottom:1rem;
+    left:1.2rem;
+    width:1.5rem;
+    text-align: center;
+    line-height: 1.2rem;
+    font-size: 10px;
+    border-radius: 50%;
+    --color:white;
+    --border:1px solid rgba(196, 57, 57, 0.7);
+}

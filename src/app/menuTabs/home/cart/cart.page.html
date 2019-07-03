@@ -1,0 +1,47 @@
+<ion-header class="default-header">
+    <ion-toolbar class="default-header">
+        <ion-title>
+            Cart
+        </ion-title>
+        <ion-buttons slot="start">
+            <ion-icon class="icon" name="arrow-back" (click)="goBack()"></ion-icon>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-icon class="icon" name="cash" (click)="buyItems()"></ion-icon>
+            <ion-icon class="icon" name="trash" (click)="deleteItems()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="covered">
+        <ion-list>
+            <div *ngIf="(purchasesArray == null) || (purchasesArray.length == 0)">
+                <img src="../assets/images/cart-empty.jpg">
+            </div>
+            <div item-content *ngFor="let purchase of purchasesArray">
+                <ion-item-sliding>
+                    <ion-item>
+                        <ion-img class="image-type" *ngIf="purchase.type == 'magazine'"
+                            src="../assets/images/magazine.svg">
+                        </ion-img>
+                        <ion-img class="image-type" *ngIf="purchase.type == 'book'"
+                            src="../assets/images/open-book.svg">
+                        </ion-img>
+                        <ion-label>{{purchase.name}}</ion-label>
+                        <ion-checkbox class="checkbox" color="primary" slot="end"
+                            (click)="purchase.isChecked = !purchase.isChecked"></ion-checkbox>
+                        <div>
+                            <span class="light-orange-color">${{purchase.costsPerOne * purchase.qty}}/{{purchase.qty}}</span>
+                        </div>
+                    </ion-item>
+                    <ion-item-options side="start">
+                        <ion-item-option class="dart-background-orange-color">
+                            <ion-icon slot="icon-only" name="information-circle-outline" (click)="aboutItem(purchase)"></ion-icon>
+                        </ion-item-option>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </div>
+        </ion-list>
+    </div>
+    <ion-img class="cover" *ngIf="isLoading == true" src="../assets/images/loading.gif"></ion-img>
+</ion-content>

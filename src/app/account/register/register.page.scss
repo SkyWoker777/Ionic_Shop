@@ -1,0 +1,52 @@
+.container-form-group{
+    position: fixed;
+    top: 35%;
+    left: 18%;
+    width: 60%;
+    height: 100%;
+}
+
+.img-logo {
+    position: fixed;
+    top: 20%;
+    left: 40%;
+    width: 17%;
+    height: 10%;
+    min-width: 30px;
+    max-width: 85px;
+    min-height: 30px;
+}
+
+.title{
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    padding-bottom: 20px;
+}
+
+.text-content {
+    font-size: 16px;
+    font-family: 'Open Sans', Fallback, sans-serif;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.text-bottom-content {
+    font-size: 16px;
+    font-family: 'Open Sans', Fallback, sans-serif;
+    position:absolute;
+    width:300px;
+    height:300px;
+    bottom:0px;
+    right:25%;
+    left:50%;
+    margin-left:-150px;
+}
+
+.form-control{
+    margin-top: 20px;
+    width: 250px;
+}
+
+.default-button {
+    margin-top: 8%;
+}

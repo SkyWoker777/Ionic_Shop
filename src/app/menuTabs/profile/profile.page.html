@@ -1,0 +1,57 @@
+<ion-header no-border  class="default-header">
+    <ion-toolbar  class="default-header">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            {{user?.username}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="content">
+        <div>
+            <img class="profile-image" *ngIf="user == null">
+            <img class="profile-image" [ngStyle]="{ 'background-image': 'url(' + user?.profile_picture + ')'}" *ngIf="user != null">
+        </div>
+        <div class="user-info">
+            <div>
+                <span>{{user?.full_name}}</span>
+            </div>
+            <div class="bio-content">
+                <span>{{user?.bio}}</span>
+            </div>
+        </div>
+        <div class="data-content">
+            <ion-grid>
+                <ion-row align-items-center>
+                    <ion-col>
+                        {{user?.counts.media}}
+                    </ion-col>
+                    <ion-col>
+                        {{user?.counts.follows}}
+                    </ion-col>
+                    <ion-col>
+                        {{user?.counts.followed_by}}
+                    </ion-col>
+                  </ion-row>
+            </ion-grid>
+        </div>
+        <div class="data-description-content">
+            <ion-grid>
+                <ion-row align-items-center>
+                    <ion-col>
+                        MEDIA
+                    </ion-col>
+                    <ion-col>
+                        FOLLOWS
+                    </ion-col>
+                    <ion-col>
+                        FOLLOWED BY
+                    </ion-col>
+                  </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+</ion-content>

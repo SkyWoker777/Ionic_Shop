@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Back Button</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container-form-group">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate autocomplete="off">
+            <img class="img-logo" src="assets/icon/favicon.png">
+            <div text-center class="title">
+                <span>Sign In</span>
+            </div>
+            <ion-item>
+                <ion-input name="Email" formControlName="email" type="email" placeholder="your@email.com"
+                    class="form-control" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input name="Password" formControlName="password" type="password" placeholder="Password"
+                    class="form-control" required></ion-input>
+            </ion-item>
+            <ion-button class="default-button default-orange-button" size="small" expand="full" color="tertiary" type="submit">Login</ion-button>
+        </form>
+        <ion-row>
+            <div text-center class="text-content">
+                <a routerLink='/forgotPassword'>Forgot password?</a>
+            </div>
+        </ion-row>
+        <ion-row>
+            <!-- <div text-center class="text-bottom-content">
+                If you don't have an account, please <a href="https://api.instagram.com/oauth/authorize/?client_id=26d015194fa84e0d94d2c349d503c8da&redirect_uri=http://localhost:8100/account/login&response_type=code">
+                    register</a> first!
+            </div> -->
+        </ion-row>
+    </div>
+</ion-content>

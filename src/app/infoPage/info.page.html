@@ -1,0 +1,59 @@
+<ion-header class="default-header">
+    <ion-toolbar class="default-header">
+        <ion-title>
+            About
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-icon class="icon" name="close" (click)="close()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <div>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="2" class="content-with-right-border">
+                        <object class="image-type" *ngIf="type == 'magazine'" data="../assets/images/magazine.svg"
+                            type="image/svg+xml"></object>
+                        <object class="image-type" *ngIf="type == 'book'" data="../assets/images/open-book.svg"
+                            type="image/svg+xml"></object>
+                    </ion-col>
+                    <ion-col size="10">
+                        <ion-card-header>
+                            <ion-card-subtitle class="light-green-color" *ngIf="type == 'book'">{{product?.authors}}
+                            </ion-card-subtitle>
+                            <ion-card-subtitle class="light-green-color" *ngIf="type == 'magazine'">
+                                {{product?.publisher}}</ion-card-subtitle>
+                            <ion-card-title>{{product?.name}}</ion-card-title>
+                        </ion-card-header>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div class="about-content">
+            <div>
+                <ion-icon class="about-icon gray-color" name="calendar"></ion-icon>
+                <span class="about-label gray-color">year</span>
+                <span class="about-info-label">{{product?.year}}</span>
+            </div>
+            <div>
+                <ion-icon class="about-icon gray-color" name="keypad"></ion-icon>
+                <span class="about-label gray-color">category</span>
+                <span class="about-info-label">{{product?.category.value}}</span>
+            </div>
+            <div>
+                <ion-icon class="about-icon gray-color" name="contacts"></ion-icon>
+                <span class="about-label gray-color">author</span>
+                <span class="about-info-label" *ngIf="type == 'book'">{{product?.authors}}</span>
+                <span class="about-info-label" *ngIf="type == 'magazine'">{{product?.publisher}}</span>
+            </div>
+        </div>
+        <ion-card-content *ngIf="type == 'book'">{{product?.description}} </ion-card-content>
+        <div class="bottom-content" *ngIf="hideBuyButton == false">
+            <ion-button class="default-button default-orange-button" size="small" expand="full" (click)="addToCart()">Buy for
+                ${{product?.price}}</ion-button>
+        </div>
+    </div>
+</ion-content>

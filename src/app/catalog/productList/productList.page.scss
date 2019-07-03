@@ -1,0 +1,39 @@
+.content-with-right-border {
+    border-right: solid rgb(231, 231, 231);
+    position: relative;
+}
+
+.white-content {
+    height: 60px;
+    background-color: white;
+    position: relative;
+}
+
+.image-type {
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.price-label {
+    font-family: 'Open Sans', Fallback, sans-serif;
+    font-size: 20px;
+    float: right;
+}
+
+.description {
+    font-family: 'Open Sans', Fallback, sans-serif;
+    max-height: 55px;
+}
+
+.small-button {
+    background: none;
+    outline: none;
+    height: 50px;
+    width: 50px;
+}

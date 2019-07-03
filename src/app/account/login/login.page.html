@@ -1,0 +1,27 @@
+<ion-header no-border class="white-background">
+    <ion-toolbar class="white-background">
+        <ion-buttons slot="start">
+            <ion-icon class="icon gray-color" name="arrow-back" (click)="goBack()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="container-form-group">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate autocomplete="off">
+            <img class="img-logo" src="assets/icon/favicon.png">
+            <div text-center class="title">
+                <span>Sign In</span>
+            </div>
+            <ion-item>
+                <ion-input name="Email" formControlName="email" type="email" placeholder="your@email.com"
+                    class="form-control" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input name="Password" formControlName="password" type="password" placeholder="Password"
+                    class="form-control" required></ion-input>
+            </ion-item>
+            <ion-button class="default-button default-orange-button" size="small" expand="full" type="submit">Login</ion-button>
+        </form>
+        <ion-button class="default-button default-orange-button" size="small" expand="full" type="submit" (click)="signUpViaInstagram()">Login with Instagram</ion-button>
+    </div>
+</ion-content>
